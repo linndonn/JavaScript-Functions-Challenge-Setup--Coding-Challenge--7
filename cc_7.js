@@ -81,7 +81,24 @@ function filterHighValueTransactions(transactions, filterFunction) {
   // Logging into console
   console.log("High-value transactions:", filteredTrans);
 }
-// Test Data (Updated without redeclaring transactions):
+// Test Data 
 transactions = [500, 1200, 3000, 800, 2200];
 filterHighValueTransactions(transactions, amount => amount > 1000);
 // Expected output: [1200, 3000, 2200]
+
+//Task 7 - Budget Tracker
+//Write a function createBudgetTracker() that returns another function to add expenses and keep a running balance.
+function createBudgetTracker() {
+//Initalizing the balance
+let balance = 0;
+return function(expenses) {
+//Deducting expense from the balance
+balance -= expenses;
+//Logging into console
+ console.log(`Current balance: -$${Math.abs(balance)}`);
+    };
+}
+//Test Data:
+let budget = createBudgetTracker();
+budget(300); // Expected output: "Current Balance: -$300"
+budget(200); // Expected output: "Current Balance: -$500"
