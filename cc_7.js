@@ -69,3 +69,19 @@ console.log(`Total Interest: $${totalInterest.toFixed(2)}`);
 //Test Data:
 calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
 calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750.00"
+
+// Task 6 - Filtering High-Value Transactions
+// Declare an array transactions with at least five amounts.
+let transactions = [100, 200, 900, 4000, 5000];
+// Write a higher-order function filterHighValueTransactions(transactions, filterFunction) 
+// that filters transactions above $1000.
+function filterHighValueTransactions(transactions, filterFunction) {
+  // Apply filter function
+  const filteredTrans = transactions.filter(filterFunction);
+  // Logging into console
+  console.log("High-value transactions:", filteredTrans);
+}
+// Test Data (Updated without redeclaring transactions):
+transactions = [500, 1200, 3000, 800, 2200];
+filterHighValueTransactions(transactions, amount => amount > 1000);
+// Expected output: [1200, 3000, 2200]
